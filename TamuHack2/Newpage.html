@@ -1,0 +1,40 @@
+<html>
+<head>
+	<title>Facemates Login</title>
+	<link rel = "stylesheet" type = "text/css" href = "style.css"/>
+<body>
+	<div>
+		<video id="vidDisplay" autoplay="true">
+		</video>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+		navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia||navigator.mozGetUserMedia||navigator.msGetUserMedia||navigator.oGetUserMedia;
+
+		if(navigator.getUserMedia){
+			navigator.getUserMedia({video: true}, handleVideo, videoError);
+		}
+		function handleVideo(stream){
+		var foo = document.getElementById("vidDisplay");
+		console.log(foo);
+			document.querySelector('#vidDisplay').srcObject = stream;//window.URL.createObjectURL(stream);
+	}
+		function videoError(e){
+			alert("There has been a problem...");
+	}
+	</script>
+		<h1>Facemates Login</h1>
+		<form action = "Newpage.html">
+			<!--<p>Username</p>
+			<input type = "text" name = ""placeholder = "Enter Username">
+			<p>Password</p>
+			<input type = "password" name1 = "" placeholder = "Enter Password"
+			<input type = "submit" name = "" value = "Login">
+			<!--<a href = "#">Lost your password?</a><br>
+			<a href = "#">Don't have an account?</a>-->
+		</form>
+			
+	</div>
+</body>
+</head>
+</html>
